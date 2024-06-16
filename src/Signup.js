@@ -71,19 +71,19 @@ const Signup = () => {
             <form onSubmit={signupSubmit}>
                 <div className='inputelement'>
                 <label>User Name</label>
-                <input type='text' value={username} onChange={(e)=>setUsername(e.target.value)} placeholder='username'   />
+                <input type='text' value={username} onChange={(e)=>setUsername(e.target.value)} placeholder='username' required  />
                 </div>
                 <div className='inputelement'>
                 <label>Email ID</label>
-                <input type='email' value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='Email ID'   />
+                <input type='email' value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='Email ID' required   />
                 </div>
                 <div className='inputelement'>
                 <label>Password</label>
-                <input type='text' value={password} placeholder='password' onChange={(e)=> setPassword(e.target.value)}    />
+                <input type='password' value={password} pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="password" onChange={(e)=> setPassword(e.target.value)}  required  />
                 </div>
                 <div className='inputelement'>
                 <label>Phone </label>
-                <input type='tel' value={pnumber} maxLength="10" onChange={(e)=>setPnumber(e.target.value)}  />
+                <input type='tel' value={pnumber} maxLength="10" onChange={(e)=>setPnumber(e.target.value)} required />
                 </div>
                 <div className='inputelement'>
                 <label>Gender</label>
@@ -105,7 +105,7 @@ const Signup = () => {
                 </div>
                 <div className='inputelement'>
                 <label> Image </label>
-                <input type='file' onChange={handleChnage} />                 
+                <input type='file' onChange={handleChnage} accept="image/*" />                 
                 </div>
              
                 <div className='inputelement'>
